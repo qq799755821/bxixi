@@ -1,0 +1,15 @@
+.mint-header{
+    background-color:#d81e06;
+    padding: 2rem 0  2rem 0; 
+  }
+  .mint-header-button>a{
+      display: inline-block;
+      padding-left: 10px;
+  }
+  .mint-header-title{
+      font-size: 2rem;
+  }
+  .shortcut a{
+      margin-right: 5px;
+  }
+
