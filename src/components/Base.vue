@@ -1,8 +1,8 @@
 <template>
     <div>
         <!-- 底部选项卡 -->
-<div>
-<mt-tabbar v-model="tabbar" fixed>
+<div class="base">
+<mt-tabbar v-model="tabbar" fixed >
 <mt-tab-item id='index'>
   <span v-if="this.$route.path !='/'" style="color:#222222">首页</span>
   <span v-else>首页</span>
@@ -75,3 +75,6 @@ export default {
   }
 }
 </script>
+<style >
+
+</style>

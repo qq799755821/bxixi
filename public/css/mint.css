@@ -31,6 +31,9 @@
       opacity:.7
   }
   .mint-tab-container{
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
     margin-top: 10px;
 }
+.base{
+    margin-top: 55px;
+  }

@@ -36,9 +36,48 @@
           //img10.360buyimg.com/pop/s590x470_jfs/t1/139982/12/10398/66704/5f80193dE57b271a3/87461d06d50ea019.jpg.webp" alt=""></mt-swipe-item> 
           <mt-swipe-item><img src="
           //img30.360buyimg.com/pop/s590x470_jfs/t1/126451/15/12260/86499/5f59ffb7E1cad4379/c8b965c5cceff37f.jpg.webp" alt=""></mt-swipe-item> 
+
+
        </mt-swipe>
     </div>
+     <!-- 图标 -->
+     <div class="content">
+<div class="content_biao">
+  <div class="content_he" v-for="(v,i) of  category" :key="i">
+    <img :src="v.path"  alt="">
+    <p class="content_z">{{v.ps}}</p>
+  </div>
+</div>  
+</div>
+<!--广告栏 -->
+<div class="ad">
+<p>重逢专享礼</p>
+<div class="ad_1">
+  <!-- 图片 -->
+  <div>
+  <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
+  <p>12121</p>
+
+
+ <div>
+  <img src="//img12.360buyimg.com/mobilecms/s300x300_jfs/t1/35725/14/1994/129682/5cb5bcb9E03a91d26/98a88c91bd9f9769.jpg!q70.jpg.webp" alt="">
+  <p>12121</p>
+
+
+
+ <div>
+  <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
+  <p>12121</p>
+
+
+  </div>
+</div>
+</div>
+
+    
 </mt-tab-container-item>
+
+
 <mt-tab-container-item id="2">
 22222
 </mt-tab-container-item>
@@ -57,17 +96,6 @@
 
 
 
-<div class="content_biao">
-
-  <div class="content_he" v-for="(v,i) of  category" :key="i">
-    <img :src="v.path"  alt="">
-    <p class="content_z">{{v.ps}}</p>
-  </div>
-
-
-
-
-</div>
 
 
 
@@ -97,7 +125,18 @@ export default {
      //模拟后端数据
      list:[{path:'fuzhuang.png',ps:'服装'},
      {path:'dianqi.png',ps:'电器'},
-     {path:'jiaju.png',ps:'家具'}  
+     {path:'jiaju.png',ps:'家具'},
+      {path:'fuwu.png',ps:'服务'},
+       {path:'shenghuo.png',ps:'生活'} ,
+        {path:'paimai.png',ps:'拍卖'} ,
+          {path:'huiyuan.png',ps:'拍卖'} ,
+       {path:'gengduo.png',ps:'更多'} 
+      
+
+     
+     
+
+
      ],
    category:[]
     }
@@ -151,12 +190,48 @@ export default {
   color: #666;
 }
 .content_he{
-  margin: 1em;
+  margin: 1em ;
+
+}
+.content{
+    overflow-x: auto
 }
 .content_biao{
 
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+/* 广告 */
+.ad{
+  height: 150px;
+  background-color: #FA5858;
+  border-radius: 10px;
+  position: relative;
+}
+.ad>p{
+  text-align: center;
+  color: #fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 22px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -15%;
+}
+.ad_1{
+  width: 90%;
+  height: 100px;
+  background-color: pink;
+  position: absolute;
+  top: 30%;
+  border-radius: 20px;
+  left: 50%;
+  margin-left: -45%;
+  display: flex;
+   justify-content: space-between;
+}
+.ad_1>div{
+ 
 }
 </style>
