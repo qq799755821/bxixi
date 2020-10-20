@@ -1,13 +1,16 @@
 <template>
   <div>
-   <my-header class="myheader">
-    </my-header>
+  
     <router-view/>
+    <my-base v-if="this.$route.path!='/login' && this.$route.path!='/register' && this.$route.path!='/xieyi'"  ></my-base>
   </div>
 </template>
-
-<style>
-.myheader{
-  margin-bottom: 65px;
+<script>
+export default {
+    
+        
 }
+</script>
+<style>
+
 </style>

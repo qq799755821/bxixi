@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header></my-header>
 <!-- 顶部选项卡开始 -->
 <mt-navbar v-model="active" class="xuan">
   <mt-tab-item id="1">
@@ -21,9 +22,10 @@
 <!-- 首页轮播图 -->
  <div class="lunbo">
        <mt-swipe
-       :showIndicators="false" 
+        
        :auto="5000"
        :speed="1000"
+    
        >                                                             
           <mt-swipe-item><img src="//imgcps.jd.com/ling4/70945177576/MTjlkajlubTlk4HniYzluoY/NOS7tjbmipjlj6AyMDDlhYPliLg/p-5bd81f3682acdd181dfeb407/b864af73/cr/s/q.jpg" alt=""></mt-swipe-item> 
           <mt-swipe-item><img src="
@@ -49,71 +51,69 @@
 
 </div>
 
-
-
 <!-- 面板区域结束 -->
 
 
-  <!-- 面板区域开始 -->
 
 
 
-  <!-- 面板区域结束 -->
+<div class="content_biao">
+
+  <div class="content_he" v-for="(v,i) of  category" :key="i">
+    <img :src="v.path"  alt="">
+    <p class="content_z">{{v.ps}}</p>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
      
 
 
 
-<!-- 底部选项卡 -->
-<div>
-<mt-tabbar v-model="tabbar" fixed>
-<mt-tab-item id='index'>
-  首页
-  <img src="../assets/image/home_enable.png" slot="icon" alt="" v-if="tabbar=='index'">
-  <img src="../assets/image/home_disable.png"
-  slot="icon" alt="" v-else>
 
-</mt-tab-item>
-<mt-tab-item id='ditails'>
-  详情
-  <img src="../assets/image/ditails_enable.png" alt="" slot="icon" v-if="tabbar=='ditails'" >
-  <img src="../assets/image/ditails_disable.png" alt=""
-  slot="icon"  v-else >
-
-</mt-tab-item>
-<mt-tab-item id="car">
-  购物车
-   <img src="../assets/image/car_enable.png" alt="" slot="icon" v-if="tabbar=='car'">
-  <img src="../assets/image/car_disable.png" alt="" slot="icon" v-else>
-</mt-tab-item>
-<mt-tab-item id="me">
-  我的
-  <img src="../assets/image/my_enable.png" alt="" slot="icon" v-if="tabbar=='me'">
-  <img src="../assets/image/my_disable.png" alt="" slot="icon" v-else>
-</mt-tab-item>
-
-</mt-tabbar>
-
-</div>
-
-<!-- 底部选项卡结束 -->
 
 
 
   </div>
 </template>
 <script>
+import MyHeader from '../components/MyHeader'
 export default {
+  components:{MyHeader}
+  ,
   data(){
     return{
      active:'1',
-     tabbar:'index'
-    }
-  },
-  watch:{
-    tabbar(){
-
+     //模拟后端数据
+     list:[{path:'fuzhuang.png',ps:'服装'},
+     {path:'dianqi.png',ps:'电器'},
+     {path:'jiaju.png',ps:'家具'}  
+     ],
+   category:[]
     }
   }
+ ,
+ mounted(){
+   this.list.forEach(v=>{
+     v.path=require(`../assets/image/${v.path}`)
+     console.log(v)
+     this.category.push(v)
+
+
+      console.log(this.category)
+     
+   })
+ }
 }
 </script>
 <style>
@@ -130,7 +130,9 @@ export default {
   text-decoration: none;  
   color:#fff;
 }
-
+.xuan{
+  margin-top:64px;
+}
 .lunbo{
   
   height: 200px;
@@ -139,5 +141,22 @@ export default {
 .lunbo img{
   width: 100%;
   height: 100%;
+}
+.content_biao>div{
+  float: left;
+}
+.content_z{
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+}
+.content_he{
+  margin: 1em;
+}
+.content_biao{
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 </style>

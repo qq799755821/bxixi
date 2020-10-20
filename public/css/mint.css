@@ -12,4 +12,25 @@
   .shortcut a{
       margin-right: 5px;
   }
+  .mint-field-core{
+      width: 100%;
 
+  }
+  .mint-cell-wrapper{
+    background-image: linear-gradient(180deg,#fff,#fff 50%,transparent 0);
+    padding: 0;
+   
+    box-sizing: border-box;
+    margin: 0 10px;
+  }
+  .mint-button.is-disabled{
+      margin-top: 30px;
+  }
+  .mint-swipe-indicator.is-active{
+      background-color:red;
+      opacity:.7
+  }
+  .mint-tab-container{
+  border-radius: 20px;
+    margin-top: 10px;
+}
