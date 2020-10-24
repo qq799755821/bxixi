@@ -1,5 +1,6 @@
 <template>
     <div>
+      
         <!-- 底部选项卡 -->
 <div class="base">
 <mt-tabbar v-model="tabbar" fixed >
@@ -63,6 +64,7 @@ export default {
         }
     },
      mounted(){  
+
          console.log(this.$route.path)
           if(this.$route.path=='/login'){
         let  tab=document.querySelector('.mint-tabbar.is-fixed')
@@ -76,5 +78,9 @@ export default {
 }
 </script>
 <style >
-
+.base::before{
+  content: '';
+  display: block;
+  height: 55px;
+}
 </style>

@@ -22,7 +22,7 @@
 <!-- 首页轮播图 -->
  <div class="lunbo">
        <mt-swipe
-        
+
        :auto="5000"
        :speed="1000"
     
@@ -37,10 +37,42 @@
           <mt-swipe-item><img src="
           //img30.360buyimg.com/pop/s590x470_jfs/t1/126451/15/12260/86499/5f59ffb7E1cad4379/c8b965c5cceff37f.jpg.webp" alt=""></mt-swipe-item> 
 
-
        </mt-swipe>
     </div>
-     <!-- 图标 -->
+
+
+      <!-- 图标   -->
+<div class="daohangbiao">
+<mt-swipe :auto="0"
+ continuous
+  :show-indicators="false"
+>
+  <mt-swipe-item>
+          <div class="content">
+<div class="content_biao">
+  <div class="content_he" v-for="(v,i) of  category" :key="i">
+    <img :src="v.path"  alt="">
+    <p class="content_z">{{v.ps}}</p>
+  </div>
+</div>  
+</div>
+
+
+
+ <div class="content">
+<div class="content_biao">
+  <div class="content_he" v-for="(v,i) of  category" :key="i">
+    <img :src="v.path"  alt="">
+    <p class="content_z">{{v.ps}}</p>
+  </div>
+</div>  
+</div>
+
+
+
+
+  </mt-swipe-item>
+  <mt-swipe-item>
      <div class="content">
 <div class="content_biao">
   <div class="content_he" v-for="(v,i) of  category" :key="i">
@@ -49,32 +81,141 @@
   </div>
 </div>  
 </div>
-<!--广告栏 -->
+
+ <div class="content">
+<div class="content_biao">
+  <div class="content_he" v-for="(v,i) of  category" :key="i">
+    <img :src="v.path"  alt="">
+    <p class="content_z">{{v.ps}}</p>
+  </div>
+</div>  
+</div>
+
+
+  </mt-swipe-item>
+</mt-swipe>
+</div>
+
+
+
+   <!--广告栏 -->
 <div class="ad">
 <p>重逢专享礼</p>
 <div class="ad_1">
   <!-- 图片 -->
-  <div>
+  <div class="ad_2">
   <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
-  <p>12121</p>
+  <p>老客专享</p>
+  <p>30元优惠券</p>
+  </div>
 
-
- <div>
-  <img src="//img12.360buyimg.com/mobilecms/s300x300_jfs/t1/35725/14/1994/129682/5cb5bcb9E03a91d26/98a88c91bd9f9769.jpg!q70.jpg.webp" alt="">
-  <p>12121</p>
-
-
-
- <div>
+  <div  class="ad_2">
   <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
-  <p>12121</p>
+   <p>老客专享</p>
+  <p>30元优惠券</p>
+  </div>
 
-
+  <div  class="ad_2">
+  <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
+    <p>老客专享</p>
+  <p>30元优惠券</p>
   </div>
 </div>
 </div>
+<!-- 秒杀 -->
+    <div class="seckill">
 
-    
+<div class="big_seck" >
+   <div class="seckill_a" v-if="kai==false">
+<span class="myp">夕夕秒杀</span>
+<span>{{hours}}点场</span>
+<span>{{Hourleft}}</span>:
+<span>{{Minuteleft}}</span>:
+<span>{{Secondleft}}</span>
+  </div>  
+
+
+   <div class="seckill_a" :class="{donghua:kai}" v-else>
+<span class="myp">夕夕秒杀</span>
+<span>{{hours}}点场</span>
+<span style="background:#FA5858;color:#FFFFFF">开始抢啦!!</span> 
+
+
+  </div>
+
+
+  <div class="miaoshatu">
+    <div class="miaoshatu_1">
+    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+        
+          <p>$1555.00</p>
+           <p>  <del>$2555.00</del> </p>
+          </div>
+
+
+ <div class="miaoshatu_1">
+    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+        
+          <p>$1555.00</p>
+           <p>  <del>$2555.00</del> </p>
+          </div>
+
+ <div class="miaoshatu_1">
+    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+        
+          <p>$1555.00</p>
+           <p>  <del>$2555.00</del> </p>
+          </div>
+
+
+ <div class="miaoshatu_1">
+    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+        
+          <p>$1555.00</p>
+           <p>  <del>$2555.00</del> </p>
+
+          </div>
+  </div>
+</div>
+    </div>
+<!-- 发现好货 -->
+<div class="haohuo">
+ <div class="vgshop">
+   <p class="myp">发现好货</p>
+   <p>美好新生活</p>
+   <div class="goodshop">
+     <div class="goodshoptu" >
+       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+     </div>
+     <div class="goodshoptu">
+       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+     </div>
+   </div>
+ </div>
+
+
+<div class="vgshop">
+   <p class="myp">发现好货</p>
+   <p>美好新生活</p>
+   <div class="goodshop">
+     <div class="goodshoptu">
+       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+     </div>
+     <div class="goodshoptu">
+       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+     </div>
+   </div>
+ </div>
+
+
+
+</div>
+<div class="myp store">
+<span >夕夕商城</span>
+<span>快來选购你喜欢的商品吧~</span>
+</div>
+<my-product></my-product>
+
 </mt-tab-container-item>
 
 
@@ -111,48 +252,95 @@
 
 
 
-
   </div>
 </template>
 <script>
 import MyHeader from '../components/MyHeader'
+import MyProduct from '../components/Product'
 export default {
-  components:{MyHeader}
+  components:{MyHeader,MyProduct}
   ,
   data(){
     return{
      active:'1',
-     //模拟后端数据
-     list:[{path:'fuzhuang.png',ps:'服装'},
+    list:[{path:'fuzhuang.png',ps:'服装'},
      {path:'dianqi.png',ps:'电器'},
      {path:'jiaju.png',ps:'家具'},
-      {path:'fuwu.png',ps:'服务'},
-       {path:'shenghuo.png',ps:'生活'} ,
-        {path:'paimai.png',ps:'拍卖'} ,
-          {path:'huiyuan.png',ps:'拍卖'} ,
-       {path:'gengduo.png',ps:'更多'} 
-      
-
-     
-     
-
-
+      {path:'fuwu.png',ps:'服务'}
      ],
-   category:[]
-    }
+   category:[] ,
+   //保存当前时间前2小时
+   hours:0 ,
+   //定时器
+   timerID:null,
+    //显示的时分秒
+    Hourleft:0,
+    Minuteleft:0,
+    Secondleft:0,
+    kai:false
+}
   }
- ,
- mounted(){
+  ,
+  methods:{
+    getTime(){
+      this.timerID= setInterval(()=>{
+ //获取当前时间
+  let NowTime=new Date()
+  // console.log(NowTime)
+  //获取当前小时
+  let Myhours= NowTime.getHours(); //获取当前小时数(0-23)
+   if(Myhours%2==0){
+     this.hours=Myhours+2
+   }else{
+     this.hours=Myhours+1
+   }
+   //获取当前年月日
+   let nowYear= NowTime.getFullYear()
+   let nowMon=NowTime.getMonth()+1
+   let  nowDay=NowTime.getDate()
+   //未来日期
+   let wei=new Date(`${ nowYear}-${nowMon}-${nowDay} ${this.hours}:00:00`)
+   let  chuo=wei.getTime()
+   //获取相差时间戳
+ let  cha=chuo-NowTime
+  // console.log(cha)
+   if (cha > 0) {
+     
+     let time = cha / 1000;
+     // 获取时、分、秒,毫秒
+     this.Hourleft = parseInt((time % (60 * 60 * 24)) / 3600)<10?('0'+parseInt((time % (60 * 60 * 24)) / 3600)):parseInt((time % (60 * 60 * 24)) / 3600)
+     this.Minuteleft = parseInt(((time % (60 * 60 * 24)) % 3600) / 60)<10?('0'+parseInt(((time % (60 * 60 * 24)) % 3600) / 60)):parseInt(((time % (60 * 60 * 24)) % 3600) / 60);
+     this.Secondleft = parseInt(((time % (60 * 60 * 24)) % 3600) % 60)<10?('0'+parseInt(((time % (60 * 60 * 24)) % 3600) % 60)):parseInt(((time % (60 * 60 * 24)) % 3600) % 60);
+   
+    } else {
+     //活动已结束，全部设置为'00'
+     // console.log("aaa")
+      this.Hourleft="00",
+      this.Minuteleft="00",
+      this.Secondleft="00"
+       this.kai=true
+     setTimeout(()=>{
+      this.kai=false
+     },5000) 
+    }
+   },1000) 
+    }
+  
+  },
+    mounted(){
    this.list.forEach(v=>{
      v.path=require(`../assets/image/${v.path}`)
-     console.log(v)
      this.category.push(v)
-
-
-      console.log(this.category)
-     
-   })
+     })
+  this.getTime()
+  
+ 
+ },
+ watch:{
+ 
  }
+
+ 
 }
 </script>
 <style>
@@ -197,14 +385,14 @@ export default {
     overflow-x: auto
 }
 .content_biao{
-
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
+ 
 }
 /* 广告 */
 .ad{
-  height: 150px;
+  height: 190px;
   background-color: #FA5858;
   border-radius: 10px;
   position: relative;
@@ -231,7 +419,154 @@ export default {
   display: flex;
    justify-content: space-between;
 }
-.ad_1>div{
+.ad_2{
+  width: 30%;
+
+}
+.ad_2>img{
+  width: 100%;
+  height: 100%;
+}
+.ad_2>p{
+    text-align: center;
+  color: #fff;
+  font-size: 10px;
+  display: block;
+  margin-top:2px ;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* 秒杀牌 */
+.seckill{
+  margin-top: 1em;
+  position: relative;
+}
+.seckill_a{
+  position:absolute; 
+   top:0;
+  margin-left: 5px;
+}
+.seckill_a::before{
+  content: '';
+  display: block;
+  height: 10px;
+}
+.myp{
+  font-size: 18px;
+  font-family:monospace;
+  font-weight:bolder;
+   margin-left: 5px;
+}
+.seckill_a>span:nth-child(2){
+  color: #FA5858;
+  font-size: 10px;
+   margin-left: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.seckill_a>span:nth-child(3),.seckill_a>span:nth-child(4),.seckill_a>span:nth-child(5){
+  display: inline-block;
+  margin-left: 5px;
+ padding: 3px;
+ background-color: #fff;
+}
+.big_seck{
+  padding-top: 20px;
+  background: #F6CECE;
+  border-radius: 10px;
+}
+.miaoshatu{
+  display: flex;
+
+  height: 150px;
+  justify-content: space-around;
+
+  border-radius: 10px;
+}
+.miaoshatu_1::before{
+  content: '';
+  display: block;
+  height: 10px;
+}
+.miaoshatu_1{
+  margin:10px 0 0 10px;
+  width: 80px;
+  height: 100px;
+}
+.miaoshatu_1 p{
+  text-align: center;
+  color: #FE2E2E;
+  display: block;
+  font-size: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.miaoshatu_1>p:nth-child(3){
+  color: #A4A4A4;
+}
+.miaoshatu>img{
+ width: 100%;
+
+}
+.daohangbiao{
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@keyframes shake{
+   0%, 100% {
+      transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+       transform: translateY(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translateY(5px);
+    }
+}
+.donghua{
+  animation: shake 5s linear;
+}
+.goodshop{
+  display: flex;
+  
+}
+.goodshoptu{
+  margin-top: 10px;
+  width: 80px;
  
+}
+
+.goodshoptu>img{
+  width: 100%;
+}
+.haohuo{
+  display: flex;
+  justify-content: space-around;
+}
+.vgshop{
+  margin-top: 10px;
+}
+.vgshop>p:nth-child(2){
+  font-size: 8px;
+  color: #01DFD7;
+  display: inline-block;
+  margin-top: 5px;
+}
+.store{
+  display: inline-block;
+  padding: 1em;
+}
+.store>span:nth-child(2){
+  font-size: 5px;
+  display: inline-block;
+  margin-left: 3em;
+  font-weight: normal;
+  font-family: unset;
 }
 </style>

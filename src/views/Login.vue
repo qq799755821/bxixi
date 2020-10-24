@@ -96,6 +96,7 @@ export default {
                    username:this.username,
                    password:this.password 
                 }
+                console.log(obj)
                 //未完成的登录验证   
         this.axios.post('/login',this.qs.stringify(obj)).then(res=>{
            // console.log(res.data)

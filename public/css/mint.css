@@ -34,6 +34,15 @@
   border-radius: 20px 20px 0 0;
     margin-top: 10px;
 }
-.base{
-    margin-top: 55px;
-  }
+
+
+.mint-swipe, .mint-swipe-items-wrap{
+    overflow:visible;
+   
+}
+.mint-swipe-items-wrap>div.is-active{
+    touch-action:none
+}
+.mint-navbar{
+    background-color: #F2F2F2;
+}

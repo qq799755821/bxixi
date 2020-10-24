@@ -1,0 +1,12 @@
+.custom-indicator{
+    padding: 10px !important;
+    border-radius: 10px;
+    color: #666;
+    font-size: 15px;
+}
+.van-cell{
+    border-radius: 10px; 
+}
+.van-icon-arrow::before{
+    content: url('../../src/assets/image/slh.png')
+}

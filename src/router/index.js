@@ -7,6 +7,10 @@ import Car from '../views/Car.vue'
 import Me from '../views/Me.vue'
 import Register from '../views/Register.vue'
 import Xieyi from '../views/Xieyi.vue'
+import Tubiao from '../components/Tubiao.vue'
+import Product from '../components/Product.vue'
+
+
 
 
 
@@ -14,7 +18,13 @@ import Xieyi from '../views/Xieyi.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  {
+ {
+  path: '/product',
+  component:Product
+ },{
+  path: '/tubiao',
+  component:Tubiao
+ }, {
     path: '/xieyi',
     component:Xieyi
   },{
