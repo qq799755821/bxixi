@@ -16,6 +16,10 @@ import '../public/css/quanju.css'
  import '../public/css/my-mint.scss' //默认颜色
 
  import axios from 'axios'
+//引入bus
+  import VueBus from 'vue-bus'
+  Vue.use(VueBus)
+
 //注册插件
 Vue.use(MintUi)
 Vue.use(VantUi)

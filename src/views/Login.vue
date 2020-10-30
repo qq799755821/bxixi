@@ -26,16 +26,20 @@
 </mt-field>
 
 <!-- 保存用户名容器 -->
+
  <div :class="{unameyin}">
+     
 <div :class="{yin:!key,zhi:key}"  >
+    <div>
    <span class="turong" ><img class="userimg" src="../assets/userimg/touxiang.jpg" alt=""></span>
-   <span class="uname" @click="shangunm">799755821</span>
+   <span class="uname" @click="shangunm">{{zhang[0]}}</span>
    <span class="delete"  @click='del'>×</span>
-  
 </div>
+   <div :class="{yin:hao,wu:di}">暂无帐号</div>
 
+ 
 </div>
-
+</div>
 <mt-field 
  label="密码"
  :type="leixing"
@@ -87,7 +91,10 @@ export default {
          leixing:'password',
          //控制按钮是否禁用
          jinyong:true,
-         
+         //保存用户名的容器
+         zhang:[],
+         hao:true,
+         di:false
         }
     },
     methods:{
@@ -102,18 +109,23 @@ export default {
            // console.log(res.data)
                   if(res.data.code==1){
                  this.$toast(`登录成功`)
-        //  this.$router.push('/')
+                 // 获取当前日期
+                 let now=new Date()
+                 now.setDate(now.getDate()+7);
+                 let expires=now.toUTCString()
+                 //设置COOKIE
+                document.cookie=`username=${this.username};expires=${expires}` 
+                     this.$router.push('/')
              }else{
                   this.$messagebox(`登录提示`,'用户名或密码错误')
              }
         })
                 
-
-
         },
         xia(){
            this.key=true
-           this.unameyin=false
+           this.unameyin=false;
+
         },
         shang(){
         this.key=false
@@ -129,7 +141,13 @@ export default {
 })
 .then(action => { 
      if (action == 'confirm') {     //确认的回调
-      e.target.parentElement.remove()
+      e.target.parentElement.remove();
+     this.zhang.splice(0,1)
+     console.log(this.zhang)
+      if(this.zhang.length==0){
+          this.hao=false;
+          this.di=true
+      }
       //web Storage 删除待写
     }
 })
@@ -184,10 +202,30 @@ export default {
                 //console.log(variable)         
                     this.username=variable
                      
+        },
+        //在cokie中获取用户名的函数
+        getCookieItem(key){
+      //获取当前的cookie字符串,形如 username=123; password=456; age=19
+      let cookie = document.cookie;
+      //第一次使用分号进行拆分，结果为数组，
+      //形如 ['username=123',' password=456',' age=19']
+      let array = cookie.split(/;/g);      
+      for(let n = 0;n<array.length;n++){
+        //依次拆分每一个数组字符串成员,其中下标为0的代表key,下标为1的代表value
+        let temp = array[n].split(/=/g);
+        //之所以要使用trim()方法是因为存在空格,注意第11行中的空格
+        if(temp[0].trim() == key){
+          //如果找到，则直接返回数组中下标为1的value,此时即可终止函数的执行
+          return temp[1];
         }
+      }
+      //如果没有找到的话，则返回undefined，当然也可以返回其他的信息
+      return undefined;
+    }
        } ,
        mounted(){
-          this.unamepwd()   
+          this.unamepwd() ;
+           this.zhang.push(this.getCookieItem('username')  )
        } 
    
       
@@ -237,4 +275,10 @@ border-bottom: 1px solid  #E6E6E6;
   .juli{
       margin-top: 30px;
   }
+  .wu{
+      padding: 1em;
+      text-align: center;
+      border-bottom: 1  px solid #E6E6E6;
+  }
+
 </style>

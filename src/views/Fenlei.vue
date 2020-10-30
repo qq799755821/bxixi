@@ -1,6 +1,14 @@
 <template>
-    <div>
-        这是购物车
+    <div>41122
+
+
+
+
+
+
+
+
          <my-base></my-base> 
     </div>
+    
 </template>

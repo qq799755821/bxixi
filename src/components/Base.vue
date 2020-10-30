@@ -12,9 +12,9 @@
   slot="icon" alt="" v-else>
 
 </mt-tab-item>
-<mt-tab-item id='details'>
-  详情
-  <img src="../assets/image/ditails_enable.png" alt="" slot="icon" v-if="tabbar=='details'" >
+<mt-tab-item id='fenlei'>
+  分类
+  <img src="../assets/image/ditails_enable.png" alt="" slot="icon" v-if="tabbar=='fenlei'" >
   <img src="../assets/image/ditails_disable.png" alt=""
   slot="icon"  v-else >
 
@@ -47,40 +47,37 @@ export default {
    watch:{
     tabbar(v){
         if(v=='index'){
-               this.tabbar='index'
+              
           this.$router.push('/').catch(e=>{})
+           this.tabbar='index'
         }
-        if(v=='details'){
-            this.tabbar='details'
-          this.$router.push('/details').catch(e=>{})
+        if(v=='fenlei'){
+          
+          this.$router.push('/fenlei').catch(e=>{})
+            this.tabbar='fenlei'
         }
          if(v=='car'){
-             this.tabbar='car'
+           
            this.$router.push('/car').catch(e=>{})
+             this.tabbar='car'
         }
         if(v=='me'){
-            this.tabbar="me"
+           
           this.$router.push('/me').catch(e=>{})
+           this.tabbar="me"
         }
     },
      mounted(){  
 
-         console.log(this.$route.path)
-          if(this.$route.path=='/login'){
-        let  tab=document.querySelector('.mint-tabbar.is-fixed')
-        console.log(tab)
-        tab.style.display="none"
-          } else if(this.$route.path!=='/login') {
-             tab.style.display="block"  
-          }
+         
     }   
   }
 }
 </script>
 <style >
-.base::before{
+ /* .base::before{
   content: '';
   display: block;
   height: 55px;
-}
+}  */
 </style>

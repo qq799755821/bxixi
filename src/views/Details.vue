@@ -1,5 +1,5 @@
-<template>
-    <div @click="kai=false" >
+<template >
+    <div @click="kai=false">
 
     
 
@@ -91,19 +91,33 @@
 
 
 <my-detail></my-detail>
+<my-detailthree @bload="jieshou"></my-detailthree>
+<!-- 加入购物车 -->
 
+<div style="margin-top:50px">
 
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" dot />
+  <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" badge="12" />
+  <van-goods-action-button type="warning" text="加入购物车" />
+  <van-goods-action-button type="danger" text="立即购买" />
+</van-goods-action>
+
+</div>
     </div>
 
 </template>
 <script>
 import MyDetail from '../components/Towdetails'
+import MyDetailthree from '../components/Threedetails'
 export default {
-  components:{MyDetail},
+  components:{MyDetail,MyDetailthree},
     data() {
     return {
       current: 0,
-      kai:false
+      kai:false,
+      val:""
     };
   },
   methods: {
@@ -112,13 +126,23 @@ export default {
     },
     kaiguan(){
       this.kai==false ? this.kai=true :this.kai=false
+    },
+    jieshou(value){
+       this.val=value
     }
   
+  },
+  mounted(){
+         let base=document.querySelector('.base')
+         if(base){
+         base.parentElement .removeChild(base)   
+         }  
   }
 
 }
 </script>
 <style scoped>
+
  .custom-indicator {
     position: absolute;
     right: 5px;

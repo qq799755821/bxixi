@@ -1,156 +1,108 @@
 <template>
-<div>
+  <div>
+    <div class="box">
 
-<div class="box">
-  <div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt=""> 
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
+      <div class="all" v-for="(v,i) of  this.$store.state.commodity" :key="i">
+        <router-link :to="`/details/${v.pid}`">
+          <div class="all_img">
+            <img
+              :src="v.img"
+              alt=""
+            />
+            <span class="biaofu">{{v.shoptype}}</span>
+            <div class="title">
+              <p>{{v.subject}}</p>
+            </div>
+            <span class="jianjie">{{v.short}}</span>
+            <p class="price">￥{{v.price}}</p>
+            <p class="btn">看相似</p>
+          </div>
+        </router-link>
+      </div>
 
- <div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
-
-
-
- <div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
-
-
-<div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
-
-
-
-<div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
-
-
-<div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
-
-<div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
-
-<div class="all">
-    <div class="all_img">
-      <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-    <span class="biaofu">自营</span>
-    <div class="title">啦啦啦(EAHJHJ)啦啦啦啦啦啦啦啦啦</div>
-    <span class="jianjie">这是一个小东西</span> 
-    <p class="price">￥1490</p>
-    <p class="btn">看相似</p>
-  </div>
-</div>
-
-
-
-
-</div>
+       
+    </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      id: 3,    
+    };
+  },
+  mounted() {
+     this.$store.state.commodity=[]
+    this.$store.dispatch('getcommodity')
+  },
+  methods: {
+    getHouse() {
+      this.$bus.emit("bload", this.id);
+    },
+  },
+};
+</script>
 <style>
-.box{
+.box {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin-bottom: 55px;
 }
-  .all{
-   position: relative;
- width:40%;
-  }
-  .all_img{
-    width: 100%;
-    background-color: #fff;
-    margin-bottom: 13px;
-    
-  }
-  .all_img>img{
-    width: 100%;
-    height: 100%;
-  }
-
-  .title{
-    
-    margin-top: 10px;
-    font-size: 15px;
-    font-family:inherit;
-  }
- .jianjie{
-   font-size: 8px;
-   color:#FF4000;
-   background: #F6CECE;
-   display: inline-block;
-   margin: 6px 0 6px 0;
- }
- .price{
-   color:#FF0000 ;
-   font-family: Arial, Helvetica, sans-serif;
- }
- .btn{
-   position: absolute;
-   top: 88%;
-  right: 0%;
+.all {
+  position: relative;
+  width: 40%;
+}
+.all_img {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 13px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: -0.5em;
+  
+}
+.all_img > img {
+  width: 100%;
+  height: 100%;
+}
+.title {
+  overflow-y: hidden;
+}
+.title > p {
+  height: 30px;
+  line-height: 15px;
+  margin-top: 10px;
   font-size: 12px;
-  background: #E6E6E6;
-  color: #A4A4A4;
+  font-family: inherit;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+.jianjie {
+  font-size: 8px;
+  color: #ff4000;
+  background: #f6cece;
+  display: inline-block;
+  margin: 6px 0 6px 0;
+}
+.price {
+  color: #ff0000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btn {
+  position: absolute;
+  top: 88%;
+  right: 0%;
+  margin-right: -10px;
+  font-size: 12px;
+  background: #e6e6e6;
+  color: #a4a4a4;
   display: inline-block;
   padding: 3px;
   border-radius: 5px;
-
- }
+}
+a {
+  color: #000;
+}
 </style>

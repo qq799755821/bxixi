@@ -98,17 +98,7 @@
       <span><img src="../assets/image/qianjin.png" alt=""></span>
       </div>
  <!-- 已选 -->
- <div class="yixuan">
-   <span>已选</span>
-   <p>
-   <span>华为p30</span>,
-   <span>0.595kg</span>,
-   <span>1件</span>,
-   <span>可选服务</span>
-    <span><img src="../assets/image/slh.png" alt=""></span>
-   </p>
-  
- </div>
+ 
 
 </div>
 </template>
@@ -140,12 +130,7 @@ export default {
   width:100%;height: 50px;
   border-radius: 10px;
 }
-.money{
-    display: inline-block;
- margin:10px 0 0 10px;
-    color:#FF0000 ;
-    
-}
+
 .money>span{
     font-size: 24px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
@@ -197,6 +182,7 @@ line-height: 10px;
   font-size: 12px;
   margin-left: 15px;
   color:#6E6E6E ;
+      margin-top: 2.5em;
 }
 .miaosa{
   margin: 15px;
@@ -295,6 +281,7 @@ margin-top: 1em;
 padding: 1em;
 background: #fff;
 position: relative;
+margin-bottom: 10px;
 }
 .huodong>span:first-child{
   font-weight: bolder;
@@ -313,23 +300,5 @@ position: relative;
   position: absolute;
   right: 10px;
 }
-.yixuan{
-  margin-top: 1em;
-  padding: 1.5em 1em 1em 1em;
-  background: #fff;
-  position: relative;
-}
-.yixuan>span:first-child{
-  font-weight: bolder;
-}
-.yixuan>p>span:last-child{
-  position: absolute;
-  right: 1em;
-}
-.yixuan>p{
-   display: inline-block;
-   margin-left: 2em;
-   font-size: 15px;
-   color: #1C1C1C;
-}
+
 </style>

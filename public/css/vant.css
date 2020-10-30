@@ -10,3 +10,12 @@
 .van-icon-arrow::before{
     content: url('../../src/assets/image/slh.png')
 }
+.van-popup--bottom{
+    border-radius:10px 10px 0 0px;   
+}
+.van-button--large{
+    border-radius: 20px;
+}
+.van-popup.van-popup--bottom{
+    overflow-y: hidden;
+}

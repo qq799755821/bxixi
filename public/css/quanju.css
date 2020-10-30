@@ -1,8 +1,17 @@
-  .biaofu{
- 
-    padding: 2px;
-    font-size: 8px;
-    color: #fff;
-    background: red;
-    border-radius: 5px;  
-  }
+.biaofu {
+  display: inline-block;
+  padding: 2px;
+  font-size: 8px;
+  color: #fff;
+  background: red;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.money {
+  display: inline-block;
+  margin: 10px 0 0 10px;
+  color: #ff0000;
+}
+.font-25 {
+  font-size: 25px;
+}

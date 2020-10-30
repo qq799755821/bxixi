@@ -4,13 +4,13 @@
 <!-- 顶部选项卡开始 -->
 <mt-navbar v-model="active" class="xuan">
   <mt-tab-item id="1">
-    小米
+   推荐
   </mt-tab-item>
   <mt-tab-item id="2">
-    华为
+    品牌
   </mt-tab-item>
   <mt-tab-item id="3">
-    苹果
+    精品
   </mt-tab-item>
 </mt-navbar>
 <!-- 顶部选项卡结束 -->
@@ -22,7 +22,7 @@
 <!-- 首页轮播图 -->
  <div class="lunbo">
        <mt-swipe
-
+:show-indicators="false"
        :auto="5000"
        :speed="1000"
     
@@ -45,37 +45,33 @@
 <div class="daohangbiao">
 <mt-swipe :auto="0"
  continuous
-  :show-indicators="false"
 >
   <mt-swipe-item>
           <div class="content">
 <div class="content_biao">
-  <div class="content_he" v-for="(v,i) of  category" :key="i">
+  <div class="content_he" v-for="(v,i) of  list_1" :key="i">
     <img :src="v.path"  alt="">
     <p class="content_z">{{v.ps}}</p>
   </div>
 </div>  
 </div>
-
 
 
  <div class="content">
 <div class="content_biao">
-  <div class="content_he" v-for="(v,i) of  category" :key="i">
+  <div class="content_he" v-for="(v,i) of list_2" :key="i">
     <img :src="v.path"  alt="">
     <p class="content_z">{{v.ps}}</p>
   </div>
 </div>  
 </div>
-
-
 
 
   </mt-swipe-item>
   <mt-swipe-item>
      <div class="content">
 <div class="content_biao">
-  <div class="content_he" v-for="(v,i) of  category" :key="i">
+  <div class="content_he" v-for="(v,i) of  list_3" :key="i">
     <img :src="v.path"  alt="">
     <p class="content_z">{{v.ps}}</p>
   </div>
@@ -84,7 +80,7 @@
 
  <div class="content">
 <div class="content_biao">
-  <div class="content_he" v-for="(v,i) of  category" :key="i">
+  <div class="content_he" v-for="(v,i) of  list_4" :key="i">
     <img :src="v.path"  alt="">
     <p class="content_z">{{v.ps}}</p>
   </div>
@@ -103,23 +99,13 @@
 <p>重逢专享礼</p>
 <div class="ad_1">
   <!-- 图片 -->
-  <div class="ad_2">
-  <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
-  <p>老客专享</p>
-  <p>30元优惠券</p>
+  <div class="ad_2" v-for="(v,i) of this.$store.state.vip" :key="i">
+  <img :src="v.image">
+  <p>{{v.jianjie}}</p>
+  <p>{{v.ticket}}元优惠券</p>
   </div>
 
-  <div  class="ad_2">
-  <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
-   <p>老客专享</p>
-  <p>30元优惠券</p>
-  </div>
 
-  <div  class="ad_2">
-  <img src="//img30.360buyimg.com/mobilecms/s300x300_jfs/t1/66738/11/1136/286821/5cf61de5E12099fa1/6d4b0b55344770e4.jpg!q70.jpg.webp" alt="">
-    <p>老客专享</p>
-  <p>30元优惠券</p>
-  </div>
 </div>
 </div>
 <!-- 秒杀 -->
@@ -145,67 +131,36 @@
 
 
   <div class="miaoshatu">
-    <div class="miaoshatu_1">
-    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-        
-          <p>$1555.00</p>
-           <p>  <del>$2555.00</del> </p>
+
+    <div class="miaoshatu_1" v-for="(v,i) of  this.$store.state.seckill" :key="i">
+    <img style="width:100%" :src="v.image" alt="">
+             
+          <p>￥{{v.current}}</p>
+           <p>  <del>￥{{v.original}}</del> </p>
           </div>
 
 
- <div class="miaoshatu_1">
-    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-        
-          <p>$1555.00</p>
-           <p>  <del>$2555.00</del> </p>
-          </div>
-
- <div class="miaoshatu_1">
-    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-        
-          <p>$1555.00</p>
-           <p>  <del>$2555.00</del> </p>
-          </div>
-
-
- <div class="miaoshatu_1">
-    <img style="width:100%" src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-        
-          <p>$1555.00</p>
-           <p>  <del>$2555.00</del> </p>
-
-          </div>
   </div>
 </div>
     </div>
 <!-- 发现好货 -->
 <div class="haohuo">
- <div class="vgshop">
-   <p class="myp">发现好货</p>
-   <p>美好新生活</p>
+
+ <div class="vgshop" v-for="(v,i) of this.$store.state.haohuo" :key="i">
+   <p class="myp">{{v.title}}</p>
+   <p>{{v.introduce}}</p>
    <div class="goodshop">
      <div class="goodshoptu" >
-       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+       <img :src="v.imagpathOne" alt="">
      </div>
      <div class="goodshoptu">
-       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
+       <img :src="v.imagpathTwo" alt="">
      </div>
    </div>
  </div>
 
 
-<div class="vgshop">
-   <p class="myp">发现好货</p>
-   <p>美好新生活</p>
-   <div class="goodshop">
-     <div class="goodshoptu">
-       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-     </div>
-     <div class="goodshoptu">
-       <img src="//img13.360buyimg.com/img/s100x100_jfs/t1/50975/30/15545/168609/5dc985c4E06e8dbda/032be1072bde8b82.jpg!cc_100x100.webp" alt="">
-     </div>
-   </div>
- </div>
+
 
 
 
@@ -251,7 +206,7 @@
 
 
 
-
+  <my-base></my-base> 
   </div>
 </template>
 <script>
@@ -262,13 +217,32 @@ export default {
   ,
   data(){
     return{
+      tabbar:'index',
      active:'1',
-    list:[{path:'fuzhuang.png',ps:'服装'},
+    onelist:[{path:'fuzhuang.png',ps:'服装'},
      {path:'dianqi.png',ps:'电器'},
      {path:'jiaju.png',ps:'家具'},
       {path:'fuwu.png',ps:'服务'}
      ],
-   category:[] ,
+     twolist:[{path:'shenghuo.png',ps:'生活'},
+     {path:'huiyuan.png',ps:'会员'},
+     {path:'paimai.png',ps:'拍卖'},
+      {path:'yiyao.png',ps:'医药'}
+     ],
+     threelist:[{path:'shouji.png',ps:'手机'},
+     {path:'daishou.png',ps:'代收'},
+     {path:'xidou.png',ps:'夕豆'},
+      {path:'oem.png',ps:'超市'}
+     ],
+     fourlist:[{path:'jieqian.png',ps:'借钱'},
+     {path:'fuli.png',ps:'福利'},
+     {path:'shuiguo.png',ps:'水果'},
+      {path:'gengduo.png',ps:'更多'}
+     ],
+      list_1:[] ,
+      list_2:[] ,
+       list_3:[] ,
+      list_4:[] ,
    //保存当前时间前2小时
    hours:0 ,
    //定时器
@@ -277,11 +251,15 @@ export default {
     Hourleft:0,
     Minuteleft:0,
     Secondleft:0,
-    kai:false
+    kai:false,
+  
 }
   }
   ,
   methods:{
+      
+
+
     getTime(){
       this.timerID= setInterval(()=>{
  //获取当前时间
@@ -304,8 +282,7 @@ export default {
    //获取相差时间戳
  let  cha=chuo-NowTime
   // console.log(cha)
-   if (cha > 0) {
-     
+   if (cha > 0) {   
      let time = cha / 1000;
      // 获取时、分、秒,毫秒
      this.Hourleft = parseInt((time % (60 * 60 * 24)) / 3600)<10?('0'+parseInt((time % (60 * 60 * 24)) / 3600)):parseInt((time % (60 * 60 * 24)) / 3600)
@@ -328,10 +305,32 @@ export default {
   
   },
     mounted(){
-   this.list.forEach(v=>{
+      this.$store.state.vip=[]
+      this.$store.state.seckill=[]
+      this.$store.state.haohuo=[]
+     this.$store.dispatch('getvip')
+  this.$store.dispatch('getseckill')
+    this.$store.dispatch('gethaohuo')
+ 
+   
+
+   this.onelist.forEach(v=>{
      v.path=require(`../assets/image/${v.path}`)
-     this.category.push(v)
+     this.list_1.push(v)
      })
+     this.twolist.forEach(v=>{
+     v.path=require(`../assets/image/${v.path}`)
+     this.list_2.push(v)
+     })
+     this.threelist.forEach(v=>{
+     v.path=require(`../assets/image/${v.path}`)
+     this.list_3.push(v)
+     })
+     this.fourlist.forEach(v=>{
+     v.path=require(`../assets/image/${v.path}`)
+     this.list_4.push(v)
+     })
+
   this.getTime()
   
  
@@ -495,6 +494,7 @@ export default {
   text-align: center;
   color: #FE2E2E;
   display: block;
+  margin-top: 5px;
   font-size: 15px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -539,7 +539,7 @@ export default {
 .goodshoptu{
   margin-top: 10px;
   width: 80px;
- 
+  margin-left:5px
 }
 
 .goodshoptu>img{

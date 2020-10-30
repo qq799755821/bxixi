@@ -10,7 +10,7 @@ import Xieyi from '../views/Xieyi.vue'
 import Tubiao from '../components/Tubiao.vue'
 import Product from '../components/Product.vue'
 
-
+import Fenlei from '../views/Fenlei.vue'
 
 
 
@@ -18,7 +18,10 @@ import Product from '../components/Product.vue'
 Vue.use(VueRouter)
 
 const routes = [
- {
+{
+  path: '/fenlei',
+  component:Fenlei
+ },{
   path: '/product',
   component:Product
  },{
@@ -31,7 +34,7 @@ const routes = [
     path: '/register',
     component:Register
   },{
-    path: '/details',
+    path: '/details/:id',
     component:Details
   },{
     path: '/car',
